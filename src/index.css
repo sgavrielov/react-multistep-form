@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f1f1f1;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.newStartup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.newStartup form {
+  position: relative;
+  width: 50%;
+  height: auto;
+  padding: 5rem;
+  min-height: 150px;
+  background: white;
+  border-radius: 10px;
+}
+
+.newStartup form .options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.newStartup form .options button {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid #3498db;
+  border-radius: 3px;
+  background: #3498db;
+  color: white;
+}
+
+.startupNameForm,
+.startupDescriptionForm,
+.startupStrategy {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.startupNameForm h3 {
+  font-size: 20px;
+}
+
+.startupNameForm input {
+  width: 50%;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.startupDescriptionForm h3,
+.startupStrategy .startupStrategy-startupName {
+  background: gray;
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: lightgray;
+  border-radius: 5px;
+}
+
+.startupDescriptionForm textarea {
+  width: 80%;
+  height: 180px;
+  max-height: 180px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-family: sans-serif;
+  padding: 0.5rem;
+}
+
+.startupDescriptionForm textarea::placeholder {
+  font-size: 26px;
+}
+
+.startupStrategy .startupStrategy-description {
+  background: gray;
+  padding: 1rem;
+  border-radius: 5px;
+  color: lightgrey;
+}
+
+.startupStrategy .ai-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.startupStrategy .ai-info h3 {
+  font-size: 20px;
+}
+
+.startupStrategy .ai-info p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.startupStrategy .stragey-options {
+  display: flex;
+  gap: 2rem;
+}
+
+.startupStrategy .stragey-options button {
+  padding: 0.5rem 1rem;
+  color: white;
+  background: #444444;
+  border: 1px solid #222222;
+  transition: all 200ms linear;
+}
+
+.startupStrategy .stragey-options button:hover {
+  border-radius: 3px;
+  cursor: pointer;
+  transform: scale(1.05);
+}
