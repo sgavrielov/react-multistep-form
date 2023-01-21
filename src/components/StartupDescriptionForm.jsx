@@ -1,5 +1,3 @@
-import React from "react";
-
 const StartupDescriptionForm = ({
   startupDescription,
   updateFields,
@@ -10,7 +8,7 @@ const StartupDescriptionForm = ({
       <h3>{startupName}</h3>
 
       <textarea
-        name=''
+        name='startupDescription'
         placeholder='Briefly describe your product or service'
         autoFocus
         required
