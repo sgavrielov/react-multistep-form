@@ -80,17 +80,26 @@ body {
   border: 1px solid lightgray;
   font-family: sans-serif;
   font-weight: bold;
+  font-size: 20px;
+}
+
+.startupNameForm input::placeholder {
+  background: #f8f7f7;
+  color: gray;
+  text-align: center;
+  font-size: 20px;
 }
 
 .startupDescriptionForm h3,
 .startupStrategy .startupStrategy-startupName {
-  background: gray;
+  background: lightgray;
   width: 50%;
   height: 50px;
   text-align: center;
   line-height: 50px;
-  color: lightgray;
+  color: #444444;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .startupDescriptionForm textarea {
@@ -108,10 +117,11 @@ body {
 }
 
 .startupStrategy .startupStrategy-description {
-  background: gray;
+  background: lightgray;
   padding: 1rem;
   border-radius: 5px;
-  color: lightgrey;
+  color: #444444;
+  font-size: 16px;
 }
 
 .startupStrategy .ai-info {
