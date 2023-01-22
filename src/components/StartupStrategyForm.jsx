@@ -1,16 +1,20 @@
 import React from "react";
 
 const StartupStrategyForm = ({
-  startupStrategy,
-  updateFields,
   startupName,
   startupDescription,
+  goToName,
+  goToDescription,
 }) => {
   return (
     <div className='startupStrategy'>
-      <div className='startupStrategy-startupName'>{startupName}</div>
+      <div className='startupStrategy-startupName' onClick={goToName}>
+        {startupName}
+      </div>
 
-      <div className='startupStrategy-description'>{startupDescription}</div>
+      <div className='startupStrategy-description' onClick={goToDescription}>
+        {startupDescription}
+      </div>
 
       <div className='ai-info'>
         <h3>Main success factor</h3>

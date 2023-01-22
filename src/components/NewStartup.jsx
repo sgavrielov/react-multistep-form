@@ -18,11 +18,22 @@ const NewStartup = () => {
   };
 
   const [data, setData] = useState(INITIAL_DATA);
-  const { step, isFirstStep, back, next, isLastStep } = useMultisteapForm([
-    <StartNameForm {...data} updateFields={updateFields} />,
-    <StartupDescriptionForm {...data} updateFields={updateFields} />,
-    <StartupStrategyForm {...data} updateFields={updateFields} />,
-  ]);
+  const { step, isFirstStep, back, next, isLastStep, goTo } = useMultisteapForm(
+    [
+      <StartNameForm {...data} updateFields={updateFields} />,
+      <StartupDescriptionForm
+        {...data}
+        updateFields={updateFields}
+        goTo={() => goTo(0)}
+      />,
+      <StartupStrategyForm
+        {...data}
+        updateFields={updateFields}
+        goToName={() => goTo(0)}
+        goToDescription={() => goTo(1)}
+      />,
+    ]
+  );
 
   const onSubmit = (e) => {
     e.preventDefault();

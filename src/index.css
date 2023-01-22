@@ -55,6 +55,7 @@ body {
   border-radius: 5px;
   background: #3498db;
   color: white;
+  cursor: pointer;
 }
 
 .startupNameForm,
@@ -70,7 +71,9 @@ body {
 }
 
 .startupNameForm h3 {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #bbb;
 }
 
 .startupNameForm input {
@@ -82,6 +85,7 @@ body {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 20px;
+  outline: 1px solid #3498db;
 }
 
 .startupNameForm input::placeholder {

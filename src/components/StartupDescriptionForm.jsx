@@ -2,10 +2,11 @@ const StartupDescriptionForm = ({
   startupDescription,
   updateFields,
   startupName,
+  goTo,
 }) => {
   return (
     <div className='startupDescriptionForm'>
-      <h3>{startupName}</h3>
+      <h3 onClick={goTo}>{startupName}</h3>
 
       <textarea
         name='startupDescription'
