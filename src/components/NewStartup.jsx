@@ -46,6 +46,7 @@ const NewStartup = () => {
       <form onSubmit={onSubmit}>
         {step}
         <div className='options'>
+          {data.startupName && isFirstStep && <button>Finish</button>}
           {!isFirstStep && (
             <button type='button' onClick={back}>
               Back

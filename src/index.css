@@ -31,7 +31,14 @@ body {
   min-height: 150px;
   background: white;
   border-radius: 10px;
-  transition: all 5s ease-in;
+  transition: all 500ms ease-in;
+}
+
+.newStartup form input,
+.newStartup form textarea {
+  outline: 1px solid #3498db;
+  border: 1px solid lightgray;
+  font-family: sans-serif;
 }
 
 .newStartup form .options {
@@ -81,11 +88,9 @@ body {
   padding: 1rem;
   width: 80%;
   border-radius: 5px;
-  border: 1px solid lightgray;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 20px;
-  outline: 1px solid #3498db;
 }
 
 .startupNameForm input::placeholder {
@@ -97,7 +102,8 @@ body {
 
 .startupDescriptionForm h3,
 .startupStrategy .startupStrategy-startupName {
-  background: lightgray;
+  background: #f8f7f7;
+  border: 1px solid lightgray;
   width: 50%;
   height: 50px;
   text-align: center;
@@ -119,8 +125,6 @@ body {
   padding: 1rem;
   font-size: 20px;
   border-radius: 5px;
-  border: 1px solid lightgray;
-  font-family: sans-serif;
 }
 
 .startupDescriptionForm input::placeholder {
@@ -129,7 +133,8 @@ body {
 
 .startupStrategy .startupStrategy-description {
   position: relative;
-  background: linear-gradient(#f1f1f1, #f9f9f9);
+  background: linear-gradient(#f8f8f8, #f9f9f9);
+  border: 1px solid lightgray;
   color: #444444;
   line-height: 1.5;
   width: 80%;
@@ -166,11 +171,14 @@ body {
 
 .startupStrategy .ai-info h3 {
   font-size: 20px;
+  color: darkgray;
 }
 
 .startupStrategy .ai-info p {
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
+  color: gray;
+  line-height: 1.5;
 }
 
 .startupStrategy .stragey-options {
@@ -179,15 +187,60 @@ body {
 }
 
 .startupStrategy .stragey-options button {
-  padding: 0.5rem 1rem;
-  color: white;
-  background: #444444;
-  border: 1px solid #222222;
+  padding: 0.5rem 1.5rem;
+  color: black;
+  background: #f8f7f7;
+  border: 1px solid lightgray;
   transition: all 200ms linear;
 }
 
 .startupStrategy .stragey-options button:hover {
   border-radius: 3px;
+  border: 1px solid #3498db;
   cursor: pointer;
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 428px) {
+  .newStartup form {
+    width: 90%;
+    padding: 3rem 0;
+  }
+
+  .startupNameForm {
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .startupNameForm h3 {
+    font-size: 16px;
+  }
+
+  .startupNameForm input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .startupNameForm input::placeholder {
+    font-size: 16px;
+  }
+
+  .startupStrategy .ai-info {
+    width: 80%;
+  }
+
+  .startupStrategy .stragey-options {
+    margin-bottom: 1rem;
+  }
+
+  .startupStrategy .stragey-options button {
+    padding: 0.5rem 1rem;
+  }
 }
