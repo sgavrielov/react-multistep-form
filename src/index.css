@@ -142,7 +142,7 @@ body {
 }
 
 .startupDescriptionForm textarea {
-  min-width: 80%;
+  /* min-width: 80%; */
   width: 80%;
   max-width: 95%;
   height: 100px;
@@ -272,9 +272,18 @@ body {
 
   .startupStrategy .stragey-options {
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
 
-  .startupStrategy .stragey-options button {
-    padding: 0.5rem 1rem;
+  .startupStrategy .stragey-options span {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .startupDescriptionForm textarea {
+    width: 80% !important;
+    margin-bottom: 1rem;
   }
 }
