@@ -32,14 +32,21 @@ const StartupStrategyForm = ({
 
       <div className='stragey-options'>
         <span
+          className={startupStrategy === "Invested Capital" && "checked"}
           onClick={() => updateFields({ startupStrategy: "Invested Capital" })}
         >
           Invested Capital
         </span>
-        <span onClick={() => updateFields({ startupStrategy: "Option 2" })}>
+        <span
+          className={startupStrategy === "Option 2" && "checked"}
+          onClick={() => updateFields({ startupStrategy: "Option 2" })}
+        >
           Option 2
         </span>
-        <span onClick={() => updateFields({ startupStrategy: "Option 3" })}>
+        <span
+          className={startupStrategy === "Option 3" && "checked"}
+          onClick={() => updateFields({ startupStrategy: "Option 3" })}
+        >
           Option 3
         </span>
       </div>

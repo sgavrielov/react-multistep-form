@@ -226,8 +226,11 @@ body {
   transition: all 200ms linear;
 }
 
-.startupStrategy .stragey-options span:hover {
+.startupStrategy .stragey-options span:hover,
+.startupStrategy .stragey-options span.checked {
   border: 1px solid #3498db;
+  background: #3498db;
+  color: white;
   cursor: pointer;
   transform: scale(1.15);
 }
