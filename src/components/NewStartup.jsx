@@ -38,7 +38,12 @@ const NewStartup = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert("Success");
+    alert(
+      `Success,
+      ${data.startupName},
+        ${data.startupDescription},
+          ${data.startupStrategy}`
+    );
   };
 
   return (
@@ -46,7 +51,9 @@ const NewStartup = () => {
       <form onSubmit={onSubmit}>
         {step}
         <div className='options'>
-          {data.startupName && isFirstStep && <button>Finish</button>}
+          {data.startupName && isFirstStep && (
+            <button className='btn-finish'>Finish</button>
+          )}
           {!isFirstStep && (
             <button type='button' onClick={back}>
               Back

@@ -3,6 +3,8 @@ import React from "react";
 const StartupStrategyForm = ({
   startupName,
   startupDescription,
+  startupStrategy,
+  updateFields,
   goToName,
   goToDescription,
 }) => {
@@ -29,9 +31,17 @@ const StartupStrategyForm = ({
       </div>
 
       <div className='stragey-options'>
-        <button>Option 1</button>
-        <button>Option 2</button>
-        <button>Option 3</button>
+        <span
+          onClick={() => updateFields({ startupStrategy: "Invested Capital" })}
+        >
+          Invested Capital
+        </span>
+        <span onClick={() => updateFields({ startupStrategy: "Option 2" })}>
+          Option 2
+        </span>
+        <span onClick={() => updateFields({ startupStrategy: "Option 3" })}>
+          Option 3
+        </span>
       </div>
     </div>
   );

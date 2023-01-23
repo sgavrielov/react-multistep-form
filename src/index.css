@@ -31,6 +31,7 @@ body {
   min-height: 150px;
   background: white;
   border-radius: 10px;
+  box-shadow: 0 10px 20px -7px rgba(0, 0, 0, 0.07);
   transition: all 500ms ease-in;
 }
 
@@ -65,6 +66,20 @@ body {
   cursor: pointer;
 }
 
+.newStartup form .options button.btn-finish {
+  animation: btn-finish 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@keyframes btn-finish {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .startupNameForm,
 .startupDescriptionForm,
 .startupStrategy {
@@ -75,6 +90,19 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 50px;
+  animation: slide 500ms linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translate(0px, 0);
+  }
+  50% {
+    transform: translate(20px, 0);
+  }
+  to {
+    transform: translate(-0px, 0);
+  }
 }
 
 .startupNameForm h3 {
@@ -127,8 +155,8 @@ body {
   border-radius: 5px;
 }
 
-.startupDescriptionForm input::placeholder {
-  font-size: 20px;
+.startupDescriptionForm textarea::placeholder {
+  font-size: 22px;
 }
 
 .startupStrategy .startupStrategy-description {
@@ -186,19 +214,22 @@ body {
   gap: 2rem;
 }
 
-.startupStrategy .stragey-options button {
+.startupStrategy .stragey-options span {
   padding: 0.5rem 1.5rem;
   color: black;
-  background: #f8f7f7;
+  background: #f7f7f7;
   border: 1px solid lightgray;
+  transform: scale(1.1);
+  font-weight: 600;
+  border-radius: 3px;
+  font-family: sans-serif;
   transition: all 200ms linear;
 }
 
-.startupStrategy .stragey-options button:hover {
-  border-radius: 3px;
+.startupStrategy .stragey-options span:hover {
   border: 1px solid #3498db;
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 @media screen and (max-width: 428px) {
