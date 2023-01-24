@@ -10,6 +10,16 @@ body {
   font-family: sans-serif;
 }
 
+svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .newStartup {
   width: 100vw;
   height: 100vh;
@@ -33,6 +43,16 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 20px -7px rgba(0, 0, 0, 0.07);
   transition: all 500ms ease-in;
+}
+
+.newStartup form .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .newStartup form input,
@@ -235,6 +255,24 @@ body {
   color: white;
   cursor: pointer;
   transform: scale(1.15);
+}
+
+.btn-toggle-multistep-from {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f8f7f7;
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+.btn-toggle-multistep-from:hover {
+  background: #3498db;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 428px) {
