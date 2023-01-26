@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useMultisteapForm } from "../hooks/useMultisteapForm";
-import StartNameForm from "./StartNameForm";
-import StartupDescriptionForm from "./StartupDescriptionForm";
-import StartupStrategyForm from "./StartupStrategyForm";
+import { useMultisteapForm } from "../../hooks/useMultisteapForm";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
 
 const INITIAL_DATA = {
   startupName: "",
@@ -10,7 +10,7 @@ const INITIAL_DATA = {
   startupStrategy: "",
 };
 
-const NewStartup = ({ open, setOpen }) => {
+function NewStartup({ open, setOpen }) {
   const updateFields = (fields) => {
     setData((prev) => {
       return { ...prev, ...fields };
@@ -20,13 +20,9 @@ const NewStartup = ({ open, setOpen }) => {
   const [data, setData] = useState(INITIAL_DATA);
   const { step, isFirstStep, back, next, isLastStep, goTo } = useMultisteapForm(
     [
-      <StartNameForm {...data} updateFields={updateFields} />,
-      <StartupDescriptionForm
-        {...data}
-        updateFields={updateFields}
-        goTo={() => goTo(0)}
-      />,
-      <StartupStrategyForm
+      <Step1 {...data} updateFields={updateFields} />,
+      <Step2 {...data} updateFields={updateFields} goTo={() => goTo(0)} />,
+      <Step3
         {...data}
         updateFields={updateFields}
         goToName={() => goTo(0)}
@@ -38,32 +34,24 @@ const NewStartup = ({ open, setOpen }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert(
-      `Success,
-      ${data.startupName},
-        ${data.startupDescription},
-          ${data.startupStrategy}`
-    );
+    alert("Success");
   };
 
-  const close = () => {
-    setOpen(!open);
-  };
+  const close = () => setOpen(!open);
 
   return (
-    <div className='newStartup'>
+    <div className='multistepForm newStartup'>
       <form onSubmit={onSubmit}>
-        <span className='close-btn' onClick={close}>
+        <button type='button' className='closeMultistepFormBtn' onClick={close}>
           <svg viewBox='0 0 24 24'>
             <line x1='18' y1='6' x2='6' y2='18'></line>
             <line x1='6' y1='6' x2='18' y2='18'></line>
           </svg>
-        </span>
+        </button>
+
         {step}
+
         <div className='options'>
-          {data.startupName && isFirstStep && (
-            <button className='btn-finish'>Finish</button>
-          )}
           {!isFirstStep && (
             <button type='button' onClick={back}>
               Back
@@ -74,6 +62,6 @@ const NewStartup = ({ open, setOpen }) => {
       </form>
     </div>
   );
-};
+}
 
 export default NewStartup;

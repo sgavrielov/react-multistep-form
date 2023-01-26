@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NewStartup from "./components/NewStartup";
+import NewStartup from "./components/newStartup/NewStartup";
 
 const App = () => {
   const [toggleNewStartup, setToggleNewStartup] = useState(false);

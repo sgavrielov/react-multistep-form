@@ -1,8 +1,8 @@
 import React from "react";
 
-const StartNameForm = ({ startupName, updateFields }) => {
+function Step1({ startupName, updateFields }) {
   return (
-    <div className='startupNameForm'>
+    <div className='step startupName'>
       <h3>
         Please provide some information about your new startup.
         <br />
@@ -18,6 +18,6 @@ const StartNameForm = ({ startupName, updateFields }) => {
       />
     </div>
   );
-};
+}
 
-export default StartNameForm;
+export default Step1;

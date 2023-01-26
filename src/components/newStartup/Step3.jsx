@@ -1,34 +1,27 @@
 import React from "react";
+import AiInfo from "./AiInfo";
 
-const StartupStrategyForm = ({
+function Step3({
   startupName,
   startupDescription,
   startupStrategy,
   updateFields,
   goToName,
   goToDescription,
-}) => {
+}) {
   return (
-    <div className='startupStrategy'>
-      <div className='startupStrategy-startupName' onClick={goToName}>
+    <div className='step startupStrategy'>
+      <div className='previous-input' onClick={goToName}>
         {startupName}
       </div>
 
-      <div className='startupStrategy-description' onClick={goToDescription}>
-        {startupDescription}
-      </div>
+      {startupDescription && (
+        <div className='previous-input description' onClick={goToDescription}>
+          {startupDescription}
+        </div>
+      )}
 
-      <div className='ai-info'>
-        <h3>Main success factor</h3>
-
-        <p>
-          Our AI has determined your business model's main success
-          <br />
-          factor based on your description.
-          <br />
-          You can keep this suggestion or change it if you disagree.
-        </p>
-      </div>
+      <AiInfo />
 
       <div className='stragey-options'>
         <span
@@ -52,6 +45,6 @@ const StartupStrategyForm = ({
       </div>
     </div>
   );
-};
+}
 
-export default StartupStrategyForm;
+export default Step3;
