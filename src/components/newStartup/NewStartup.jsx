@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMultisteapForm } from "../../hooks/useMultisteapForm";
+import { useMultistepForm } from "../../hooks/usemultistepForm";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -18,18 +18,16 @@ function NewStartup({ open, setOpen }) {
   };
 
   const [data, setData] = useState(INITIAL_DATA);
-  const { step, isFirstStep, back, next, isLastStep, goTo } = useMultisteapForm(
-    [
-      <Step1 {...data} updateFields={updateFields} />,
-      <Step2 {...data} updateFields={updateFields} goTo={() => goTo(0)} />,
-      <Step3
-        {...data}
-        updateFields={updateFields}
-        goToName={() => goTo(0)}
-        goToDescription={() => goTo(1)}
-      />,
-    ]
-  );
+  const { step, isFirstStep, back, next, isLastStep, goTo } = useMultistepForm([
+    <Step1 {...data} updateFields={updateFields} />,
+    <Step2 {...data} updateFields={updateFields} goTo={() => goTo(0)} />,
+    <Step3
+      {...data}
+      updateFields={updateFields}
+      goToName={() => goTo(0)}
+      goToDescription={() => goTo(1)}
+    />,
+  ]);
 
   const onSubmit = (e) => {
     e.preventDefault();
