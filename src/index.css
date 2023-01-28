@@ -1,5 +1,6 @@
 *,
-*::before*::after {
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,6 +9,23 @@
 body {
   background: #f3f3f3;
   font-family: sans-serif;
+}
+
+.btn-toggle-multistep-from {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  color: black;
+  background: #f7f7f7;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-toggle-multistep-from:hover {
+  border: 1px solid #3498db;
+  background: #3498db;
+  color: white;
+  transition: all 100ms linear;
 }
 
 .multistepForm {
@@ -119,7 +137,7 @@ body {
     transform: translate(20px, 0);
   }
   to {
-    transform: translate(-0px, 0);
+    transform: translate(0px, 0);
   }
 }
 
@@ -163,7 +181,9 @@ body {
   color: #444444;
   line-height: 1.5;
   width: 70%;
-  height: 55px;
+  min-height: 55px;
+  height: max-content;
+  max-height: 85px;
   overflow: hidden;
   text-align: left;
   padding: 1rem;

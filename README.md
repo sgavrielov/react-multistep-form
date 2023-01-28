@@ -66,6 +66,7 @@ function NewStartup({ open, setOpen }) {
     e.preventDefault();
     if (!isLastStep) return next();
     alert("Success");
+    close();
   };
 
   // this function will close the multistep form
@@ -106,6 +107,77 @@ function NewStartup({ open, setOpen }) {
 }
 
 export default NewStartup;
+```
+
+```css
+.multistepForm {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.multistepForm svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.multistepForm form {
+  position: relative;
+  width: 50%;
+  height: auto;
+  padding: 3rem 5rem;
+  min-height: 150px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px -7px rgba(0, 0, 0, 0.07);
+}
+
+.multistepForm form .closeMultistepFormBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.multistepForm form .step {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  animation: slide 500ms linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translate(0px, 0);
+  }
+  50% {
+    transform: translate(20px, 0);
+  }
+  to {
+    transform: translate(-0px, 0);
+  }
+}
 ```
 
 Feel free to contribute and to improve.

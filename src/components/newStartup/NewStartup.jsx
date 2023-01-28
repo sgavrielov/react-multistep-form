@@ -33,6 +33,7 @@ function NewStartup({ open, setOpen }) {
     e.preventDefault();
     if (!isLastStep) return next();
     alert("Success");
+    close();
   };
 
   const close = () => setOpen(!open);
